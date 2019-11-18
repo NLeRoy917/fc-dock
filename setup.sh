@@ -37,6 +37,7 @@ sudo cp src/shell/run_model.sh ./WT
 sudo cp src/analysis/docking_analysis.py ./WT
 sudo cp src/util/reset_dir.sh ./WT
 sudo cp src/analysis/best_loops.py ./WT/loop-modeling/
+sudo cp src/options/pre_pack_opts ./WT/pre-packing
 sudo chmod +x ./WT/docking_analysis.py
 sudo chmod +x ./WT/run_model.sh
 sudo chmod +x ./WT/reset_dir.sh
@@ -51,6 +52,7 @@ sudo cp src/shell/run_model.sh ./LS
 sudo cp src/analysis/docking_analysis.py ./LS
 sudo cp src/util/reset_dir.sh ./LS
 sudo cp src/analysis/best_loops.py ./LS/loop-modeling/
+sudo cp src/options/pre_pack_opts ./LS/pre-packing
 sudo chmod +x ./LS/docking_analysis.py
 sudo chmod +x ./LS/run_model.sh
 sudo chmod +x ./LS/reset_dir.sh
@@ -65,6 +67,7 @@ sudo cp src/shell/run_model.sh ./YTE
 sudo cp src/analysis/docking_analysis.py ./YTE
 sudo cp src/util/reset_dir.sh ./YTE
 sudo cp src/analysis/best_loops.py ./YTE/loop-modeling/
+sudo cp src/options/pre_pack_opts ./YTE/pre-packing
 sudo chmod +x ./YTE/docking_analysis.py
 sudo chmod +x ./YTE/run_model.sh
 sudo chmod +x ./YTE/reset_dir.sh
@@ -79,6 +82,7 @@ sudo cp src/shell/run_model.sh ./YTE-LS
 sudo cp src/analysis/docking_analysis.py ./YTE-LS
 sudo cp src/util/reset_dir.sh ./YTE-LS
 sudo cp src/analysis/best_loops.py ./YTE-LS/loop-modeling/
+sudo cp src/options/pre_pack_opts ./YTE-LS/pre-packing
 sudo chmod +x ./YTE-LS/docking_analysis.py
 sudo chmod +x ./YTE-LS/run_model.sh
 sudo chmod +x ./YTE-LS/reset_dir.sh
@@ -93,6 +97,7 @@ sudo cp src/shell/run_model.sh ./mouse
 sudo cp src/analysis/docking_analysis.py ./mouse
 sudo cp src/util/reset_dir.sh ./mouse
 sudo cp src/analysis/best_loops.py ./mouse/loop-modeling/
+sudo cp src/options/pre_pack_opts ./mouse/pre-packing
 sudo chmod +x ./mouse/docking_analysis.py
 sudo chmod +x ./mouse/run_model.sh
 sudo chmod +x ./mouse/reset_dir.sh

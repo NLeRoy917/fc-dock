@@ -54,7 +54,7 @@ if __name__ == "__main__":
 	# Output to file
 	with open('./output_files/best_loops.txt','w+') as f:
 		for loop in loops_sorted[:num_loops]:
-			line = loop[0] + '\t' + str(loop[1]) + '\n'
+			line = loop[0] + '.pdb' + '\t' + str(loop[1]) + '\n'
 			f.write(line)
 
 
