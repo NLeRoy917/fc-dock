@@ -1,0 +1,16 @@
+-in:file:fullatom
+-loops:loop_file loop-modeling/input_files/fc_mouse.loop
+
+-loops:fast
+-loops:max_kic_build_attempts 250
+-loops:remodel perturb_kic
+-loops:refine refine_kic
+
+-ex1
+-ex2
+-use_input_sc
+
+-out:file:fullatom
+-out:path:all loop-modeling/output_files
+-out:file:scorefile score.fasc
+
