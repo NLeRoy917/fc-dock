@@ -46,7 +46,8 @@ if __name__ == "__main__":
 	# Sort the dictionary
 	loops_sorted = sorted(loops.items(), key=lambda x: x[1])
 
-	for loop in loops_sorted:
+	for loop in loops_sorted[:num_loops]:
+		print('Top',num_loops,'scoring loops found... Preparing to write to file')
 		print(loop[0],'|',loop[1],'REU')
 
 
