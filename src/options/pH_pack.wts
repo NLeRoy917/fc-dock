@@ -1,0 +1,22 @@
+# Custom score function weights used for the pre-packing protocol
+# Function values were pulled from the following:
+# Protein-Protein Docking with Dynamic Residue Protonation States
+# Gray et. al. (December, 2014)
+# https://doi.org/10.1371/journal.pcbi.1004018
+
+fa_atr 0.80
+fa_rep 0.44
+fa_sol 0.75
+fa_elec 1.00
+fa_dun 0.56
+hbond_lr_bb 1.17
+hbond_sr_bb 1.17
+hbond_bb_sc 1.17
+hbond_sc 1.10
+e_pH 1.00
+pro_close 1.00
+rama 0.20
+omega 0.50
+p_aa_pp 0.32
+fa_intra_rep 0.004
+# fa_pair <none>

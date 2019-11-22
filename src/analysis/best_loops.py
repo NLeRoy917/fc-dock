@@ -32,27 +32,27 @@ if __name__ == "__main__":
 	loops = {} # Initialize the loops dictionary
 	num_loops = int(sys.argv[1]) # extract the number of top-scoring loops to output from the command line
 
-	score_file = "./output_files/score.sc"
+	score_file = "./loop-modeling/output_files/score.fasc"
 
 	with open(score_file,'r') as f:
 		contents = f.readlines()
 		index_store = find_columns(contents[1])
 		for line in contents[2:]:
 			line = line.split()
-			print(line)
-			print('File:',line[index_store['description']],'|','Score:',line[index_store['total_energy']])
+			#print(line)
+			#print('File:',line[index_store['description']],'|','Score:',line[index_store['total_energy']])
 			loops[line[index_store['description']]] = float(line[index_store['total_energy']])
 
 	# Sort the dictionary
 	loops_sorted = sorted(loops.items(), key=lambda x: x[1])
 
+	print('Top',num_loops,'scoring loops found... Preparing to write to file')
 	for loop in loops_sorted[:num_loops]:
-		print('Top',num_loops,'scoring loops found... Preparing to write to file')
 		print(loop[0],'|',loop[1],'REU')
 
-
+	output_file = "./loop-modeling/output_files/best_loops.txt"
 	# Output to file
-	with open('./output_files/best_loops.txt','w+') as f:
+	with open(output_file,'w+') as f:
 		for loop in loops_sorted[:num_loops]:
 			line = loop[0] + '.pdb' + '\t' + str(loop[1]) + '\n'
 			f.write(line)
