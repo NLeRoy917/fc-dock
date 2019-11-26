@@ -80,7 +80,7 @@ while IFS=$'\t' read -r file score; do
 done < "$BEST_LOOPS_FILE"
 
 # Testing break point
-exit 0
+# exit 0
 
 # counter for testing
 i=0
@@ -91,11 +91,12 @@ for folder in ./pre-packing/*/; do
 	file="${file##*/}_packed.pdb" # find output file
 	pdb="${file%.*}" # remove file extension
 
-	echo $i
-	echo $folder
-	echo $file
-	echo $pdb
-	echo $NUM_DOCKS
+	# Output names for debugging
+	# echo $i
+	# echo $folder
+	# echo $file
+	# echo $pdb
+	# echo $NUM_DOCKS
 
 	# make new directories and copy over the pdb file
 	echo "Setting up docking at pH=6.25 for ${pdb}"
@@ -106,7 +107,7 @@ for folder in ./pre-packing/*/; do
 
 	echo "Generating docking sample"
 	# run the docking script for 100? docks
-	echo $SUDO_PASS | sudo -S /$ROSETTA3/main/source/bin/docking_protocol.static.linuxgccrelease @"${DOCKING_OPTIONS}" -in:file:s "docking/${pdb}/6.25/input_files/$file" -out:path:all "docking/${pdb}/6.25/output_files" -nstruct $NUM_DOCKS -pH:pH_mode -pH:value_pH 6.25 -pack_patch pH_pack -high_patch pH_dock -high_min_patch pH_min
+	echo $SUDO_PASS | sudo -S /$ROSETTA3/main/source/bin/docking_protocol.static.linuxgccrelease @"${DOCKING_OPTIONS}" -in:file:s "docking/${pdb}/6.25/input_files/$file" -out:path:all "docking/${pdb}/6.25/output_files" -nstruct $NUM_DOCKS -keep_input_protonation_state -pH:pH_mode -pH:value_pH 6.25 -pack_patch pH_pack -high_patch pH_dock -high_min_patch pH_min
 	echo "Docking sample generated"
 
 	# make new directories and copy over the pdb file
@@ -118,7 +119,7 @@ for folder in ./pre-packing/*/; do
 
 	echo "Generating docking sample"
 	# run the docking script for 100? docks
-	echo $SUDO_PASS | sudo -S /$ROSETTA3/main/source/bin/docking_protocol.static.linuxgccrelease @"${DOCKING_OPTIONS}" -in:file:s "docking/${pdb}/7.50/input_files/$file" -out:path:all "docking/${pdb}/7.50/output_files" -nstruct $NUM_DOCKS -pH:pH_mode -pH:value_pH 7.50 -pack_patch pH_pack -high_patch pH_dock -high_min_patch pH_min
+	echo $SUDO_PASS | sudo -S /$ROSETTA3/main/source/bin/docking_protocol.static.linuxgccrelease @"${DOCKING_OPTIONS}" -in:file:s "docking/${pdb}/7.50/input_files/$file" -out:path:all "docking/${pdb}/7.50/output_files" -nstruct $NUM_DOCKS -keep_input_protonation_state -pH:pH_mode -pH:value_pH 7.50 -pack_patch pH_pack -high_patch pH_dock -high_min_patch pH_min
 	echo "Docking sample generated"
 	((i=i+1))
 done

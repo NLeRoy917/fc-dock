@@ -35,7 +35,7 @@ sudo cp src/options/fc.loop ./WT/loop-modeling/input_files
 sudo cp src/options/flag_basic_KIC ./WT/loop-modeling/input_files
 sudo cp src/options/dock_opts ./WT/docking/
 sudo cp src/shell/run_model.sh ./WT
-sudo cp src/analysis/docking_analysis.py ./WT
+sudo cp src/analysis/docking_analysis_pH.py ./WT
 sudo cp src/util/reset_dir.sh ./WT
 sudo cp src/analysis/best_loops.py ./WT/loop-modeling/
 sudo cp src/options/pre_pack_opts ./WT/pre-packing/
@@ -51,7 +51,7 @@ sudo cp src/options/fc.loop ./LS/loop-modeling/input_files
 sudo cp src/options/flag_basic_KIC ./LS/loop-modeling/input_files
 sudo cp src/options/dock_opts ./LS/docking/
 sudo cp src/shell/run_model.sh ./LS
-sudo cp src/analysis/docking_analysis.py ./LS
+sudo cp src/analysis/docking_analysis_pH.py ./LS
 sudo cp src/util/reset_dir.sh ./LS
 sudo cp src/analysis/best_loops.py ./LS/loop-modeling/
 sudo cp src/options/pre_pack_opts ./LS/pre-packing/
@@ -67,7 +67,7 @@ sudo cp src/options/fc.loop ./YTE/loop-modeling/input_files
 sudo cp src/options/flag_basic_KIC ./YTE/loop-modeling/input_files
 sudo cp src/options/dock_opts ./YTE/docking/
 sudo cp src/shell/run_model.sh ./YTE
-sudo cp src/analysis/docking_analysis.py ./YTE
+sudo cp src/analysis/docking_analysis_pH.py ./YTE
 sudo cp src/util/reset_dir.sh ./YTE
 sudo cp src/analysis/best_loops.py ./YTE/loop-modeling/
 sudo cp src/options/pre_pack_opts ./YTE/pre-packing/
@@ -83,7 +83,7 @@ sudo cp src/options/fc.loop ./YTE-LS/loop-modeling/input_files
 sudo cp src/options/flag_basic_KIC ./YTE-LS/loop-modeling/input_files
 sudo cp src/options/dock_opts ./YTE-LS/docking/
 sudo cp src/shell/run_model.sh ./YTE-LS
-sudo cp src/analysis/docking_analysis.py ./YTE-LS
+sudo cp src/analysis/docking_analysis_pH.py ./YTE-LS
 sudo cp src/util/reset_dir.sh ./YTE-LS
 sudo cp src/analysis/best_loops.py ./YTE-LS/loop-modeling/
 sudo cp src/options/pre_pack_opts ./YTE-LS/pre-packing/
@@ -99,7 +99,7 @@ sudo cp src/options/fc_mouse.loop ./mouse/loop-modeling/input_files
 sudo cp src/options/flag_basic_KIC_mouse ./mouse/loop-modeling/input_files
 sudo cp src/options/dock_opts ./mouse/docking/
 sudo cp src/shell/run_model.sh ./mouse
-sudo cp src/analysis/docking_analysis.py ./mouse
+sudo cp src/analysis/docking_analysis_pH.py ./mouse
 sudo cp src/util/reset_dir.sh ./mouse
 sudo cp src/analysis/best_loops.py ./mouse/loop-modeling/
 sudo cp src/options/pre_pack_opts ./mouse/pre-packing/

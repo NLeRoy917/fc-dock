@@ -58,12 +58,19 @@ if __name__ == "__main__":
 	for sub in sub_dirs:
 		print(sub)
 
-	docking_avgs = []
+	docking_avgs_6_25 = []
+	docking_avgs_7_50 = []
 
+
+	#Analyze docks for pH=6.25
 	for folder in sub_dirs:
 		try:
-			avg = read_score_file(root + folder + '/output_files/score.sc')
-			docking_avgs.append(avg)
+			avg_6_25 = read_score_file(root + folder + '/6.25/output_files/score_local_dock.sc')
+			docking_avgs_6_25.append(avg_6_25)
+
+			avg_7_50 = read_score_file(root + folder + '/7.50/output_files/score_local_dock.sc')
+			docking_avgs_7_50.append(avg_7_50)
+
 		except:
 			print('Error reached while reading file... Skipping to next')
 			continue
@@ -73,18 +80,28 @@ if __name__ == "__main__":
 	binwidth = 2
 	bins = range(-30, 0 + binwidth, binwidth)
 	
-	dist_avg = np.average(docking_avgs)
-	dist_med = np.median(docking_avgs)
-	dist_std = np.std(docking_avgs)
+	dist_avg_6 = np.average(docking_avgs_6_25)
+	dist_med_6 = np.median(docking_avgs_6_25)
+	dist_std_6 = np.std(docking_avgs_6_25)
 
-	print('Descriptive Statistics:')
+	dist_avg_7 = np.average(docking_avgs_7_50)
+	dist_med_7 = np.median(docking_avgs_7_50)
+	dist_std_7 = np.std(docking_avgs_7_50)
+
+	print('\npH=6.25 | Descriptive Statistics:')
 	print('-='*30)
-	print('Average:\t',dist_avg)
-	print('Median:\t\t',dist_med)
-	print('Std:\t\t',dist_std)
+	print('Average:\t',dist_avg_6)
+	print('Median:\t\t',dist_med_6)
+	print('Std:\t\t',dist_std_6)
+
+	print('\npH=7.50 | Descriptive Statistics:')
+	print('-='*30)
+	print('Average:\t',dist_avg_7)
+	print('Median:\t\t',dist_med_7)
+	print('Std:\t\t',dist_std_7)
 	
-	plt.hist(docking_avgs, bins=bins)
-	plt.ylabel('Frequency (cnt)')
-	plt.xlabel('Docking Interface Score (REU)')
-	plt.title('Distribution of Interface Energies Between Fc and FcRn Proteins (n={})'.format(len(docking_avgs)))
-	plt.show()
+	# plt.hist(docking_avgs, bins=bins)
+	# plt.ylabel('Frequency (cnt)')
+	# plt.xlabel('Docking Interface Score (REU)')
+	# plt.title('Distribution of Interface Energies Between Fc and FcRn Proteins (n={})'.format(len(docking_avgs)))
+	# plt.show()
