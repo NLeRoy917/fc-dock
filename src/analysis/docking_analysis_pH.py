@@ -35,15 +35,18 @@ def read_score_file(score_file):
 	index_store = find_columns(contents[1]) # pass in header line and recieve index dictionary
 
 	# initialize the sum and count to get average
+	scores = []
 	sum_score = 0
 	cnt = 0
 
 	for line in contents[2:]: # Iterate through all but first two lines of the score file
 		line = line.split()
-		sum_score += float(line[index_store['I_sc']])
+		scores.append(float(line[index_store['I_sc']]))
 		cnt += 1
 
-	return sum_score/cnt # return the average score.
+	scores.sort() # sort the scores
+
+	return np.average(scores[:2]) # return average of top 3 docks
 
 
 
@@ -79,11 +82,11 @@ if __name__ == "__main__":
 	# 	print(avg)
 	binwidth = 2
 	bins = range(-30, 0 + binwidth, binwidth)
-	
+
 	dist_avg_6 = np.average(docking_avgs_6_25)
 	dist_med_6 = np.median(docking_avgs_6_25)
 	dist_std_6 = np.std(docking_avgs_6_25)
-
+	
 	dist_avg_7 = np.average(docking_avgs_7_50)
 	dist_med_7 = np.median(docking_avgs_7_50)
 	dist_std_7 = np.std(docking_avgs_7_50)
